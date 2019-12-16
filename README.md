@@ -1,2 +1,2 @@
-# boost-gauge
-Arduino based boost-gauge
+# BoostGauge
+Arduino based boost gauge
