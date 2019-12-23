@@ -23,6 +23,7 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/BoostGauge/core/variant}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/BoostGauge/libraries/Ucglib/src}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/BoostGauge/libraries/SPI/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/BoostGauge/libraries/CircularBuffer}&quot;"/>
 								</option>
 								<inputType id="io.sloeber.compiler.cpp.sketch.input.457762808" name="CPP source files" superClass="io.sloeber.compiler.cpp.sketch.input"/>
 							</tool>
@@ -32,6 +33,7 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/BoostGauge/core/variant}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/BoostGauge/libraries/Ucglib/src}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/BoostGauge/libraries/SPI/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/BoostGauge/libraries/CircularBuffer}&quot;"/>
 								</option>
 								<inputType id="io.sloeber.compiler.c.sketch.input.927111824" name="C Source Files" superClass="io.sloeber.compiler.c.sketch.input"/>
 							</tool>
@@ -41,6 +43,7 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/BoostGauge/core/variant}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/BoostGauge/libraries/Ucglib/src}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/BoostGauge/libraries/SPI/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/BoostGauge/libraries/CircularBuffer}&quot;"/>
 								</option>
 								<inputType id="io.sloeber.compiler.S.sketch.input.1813255948" name="Assembly source files" superClass="io.sloeber.compiler.S.sketch.input"/>
 							</tool>
