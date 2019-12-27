@@ -3,11 +3,11 @@
 #include <CircularBuffer.h>
 
 
-//#define DEBUG_LOG
+#define DEBUG_LOG
 
 
 #define SAMPLE_PIN A0
-CircularBuffer<int, 64> buffer;
+
 int reading = 0;
 int mapped_reading = 0;
 Display display;
@@ -20,8 +20,6 @@ uint16_t graph_refresh_rate_ms        = (uint16_t)(graph_displayed_period / grap
 unsigned long graph_last_draw_time = 0;
 int graph_value = 0;
 
-using index_t = decltype(buffer)::index_t;
-index_t i;
 
 unsigned long label_time = 0;
 unsigned long loop_execution = 0;
@@ -63,14 +61,9 @@ void loop(void)
 
 		// Read analog pin
 		reading = analogRead(SAMPLE_PIN);
-		graph_value= map(reading, 0, 900, 0, 96);
 
-		//
-		buffer.push(graph_value);
-		for (i = 0; i < buffer.size(); i++)
-		{
-			display.draw(&i, buffer[i]);
-		}
+		display.addValue(reading, 0, 900);
+
 		//
 		display.printValue(graph_value);
 		//

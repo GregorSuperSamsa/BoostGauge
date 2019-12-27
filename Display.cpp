@@ -1,5 +1,8 @@
 #include "Display.h"
 
+
+#define DEBUG_LOG
+
 Ucglib_SSD1351_18x128x128_HWSPI ucg(/*cd=*/ 9, /*cs=*/ 10, /*reset=*/ 8);
 
 Display::Display()
@@ -25,18 +28,45 @@ void Display::setCaption(char* caption)
 	ucg.print(caption);
 }
 
+void Display::addValue(int value, int value_min, int value_max)
+{
+	histogram_value = map(value, value_min, value_max, histogram_value_min, histogram_value_max);
+	histogram_buffer.push(histogram_value);
+
+//	for (i = 0; i < buffer.size(); i++)
+//			{
+//				display.draw(&i, buffer[i]);
+//			}
+
+}
+
 void Display::draw(uint8_t *col, int value)
 {
-	ucg.setColor(0, 0, 0);
-	ucg.drawVLine(*col + 2, graph_y - graph_height, graph_height - value);
+	uint8_t histogram_height = frame_measurement_height - 2;
+	uint8_t histogram_y      = (frame_measurement_height - frame_measurement_x) / 2;
 
-	ucg.setColor(0, 0xFF, 0xBF, 00);
-	ucg.drawVLine(*col + 2, graph_y - value, value);
+#ifdef DEBUG_LOG
+	Serial.print("histogram y: ");
+	Serial.println(histogram_y);
+#endif
+
+
+	//if (value > 0)
+	{
+		ucg.setColor(0, 0xFF, 0xBF, 00);
+		ucg.drawVLine(*col + 2, histogram_y, value);
+	}
+
+	//	ucg.setColor(0, 0, 0);
+	//	ucg.drawVLine(*col + 2, histogram_y - histogram_height, histogram_height - value);
+
 
 }
 
 void Display::printValue(int value)
 {
+	return;
+
 	sprintf(reading, "%2d", value);
 
 	ucg.setColor(0, 0xFF, 0xBF, 00);
