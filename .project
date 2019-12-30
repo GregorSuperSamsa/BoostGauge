@@ -54,7 +54,7 @@
 		<link>
 			<name>libraries/Ucglib</name>
 			<type>2</type>
-			<location>/home/georgi/Arduino/libraries/Ucglib</location>
+			<locationURI>ECLIPSE_HOME/arduinoPlugin/libraries/Ucglib/1.5.2</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>

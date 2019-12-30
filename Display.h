@@ -18,28 +18,29 @@ public:
 
 private:
 	//
-	uint8_t frame_caption_x;
-	uint8_t frame_caption_y;
-	uint8_t frame_caption_width;
-	uint8_t frame_caption_height;
+	uint8_t gauge_caption_x;
+	uint8_t gauge_caption_y;
+	uint8_t gauge_caption_width;
+	uint8_t gauge_caption_height;
 	//
-	uint8_t frame_measurement_x;
-	uint8_t frame_measurement_y;
-	uint8_t frame_measurement_width;
-	uint8_t frame_measurement_height;
+	uint8_t gauge_frame_x;
+	uint8_t gauge_frame_y;
+	uint8_t gauge_frame_width;
+	uint8_t gauge_frame_height;
 	//
 	char reading[5];
 	//
-	CircularBuffer<int, 64> histogram_buffer;
+	//CircularBuffer<int, 120 > histogram_buffer;
+	CircularBuffer<int, 39> histogram_buffer;
 	using index_t = decltype(histogram_buffer)::index_t;
 	index_t histogram_index;
 	int histogram_value = 0;
 	//
 	int histogram_value_min = 0;
-	int histogram_value_max = 0;
+	int histogram_value_max = 50;
 
 private:
-	void drawFrames();
+	void drawGauge();
 
 };
 
