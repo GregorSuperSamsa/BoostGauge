@@ -137,7 +137,7 @@ void Display::drawGauge()
 	uint8_t header_width  = ucg.getWidth();
 	uint8_t header_height = 18;
 	ucg.drawBox(header_x, header_y, header_width, header_height);
-	ucg.drawTriangle(70, 18, 52, 0, 70, 0);
+	//ucg.drawTriangle(70, 18, 52, 0, 70, 0);
 
 	// Gauge lower caption box
 	uint8_t footer_x       = 70;
@@ -145,7 +145,7 @@ void Display::drawGauge()
 	uint8_t footer_width   = ucg.getWidth();
 	uint8_t footer_height = 18;
 	ucg.drawBox(footer_x, footer_y, footer_width, footer_height);
-	ucg.drawTriangle(70, 110, 70, 128, 52, 128);
+	//ucg.drawTriangle(70, 110, 70, 128, 52, 128);
 
 
 	// Gauge frame
@@ -153,19 +153,19 @@ void Display::drawGauge()
 	uint8_t face_y      = 0;
 	uint8_t face_width  = ucg.getWidth();
 	uint8_t face_height = ucg.getHeight();
-	//ucg.drawFrame(face_x, face_y, face_width, face_height);
+	ucg.drawFrame(face_x, face_y, 64, face_height);
 
 
-	ucg.drawLine(0, 0, 0, 128);
-	ucg.drawLine(127, 0, 127, 128);
-
-	ucg.drawLine(0, 0, 46, 0);
-	ucg.drawLine(46, 0, 64, 18);
-
-	ucg.drawLine(0, 127, 46, 127);
-	ucg.drawLine(46, 128, 64, 128 - 18);
-
-	ucg.drawLine(64, 18, 64, 128 - 18);
+//	ucg.drawLine(0, 0, 0, 128);
+//	ucg.drawLine(127, 0, 127, 128);
+//
+//	ucg.drawLine(0, 0, 46, 0);
+//	ucg.drawLine(46, 0, 64, 18);
+//
+//	ucg.drawLine(0, 127, 46, 127);
+//	ucg.drawLine(46, 128, 64, 128 - 18);
+//
+//	ucg.drawLine(64, 18, 64, 128 - 18);
 
 	ucg.drawTriangle(64, 60, 64, 68, 60, 64);
 	ucg.drawTriangle(1, 60, 1, 68, 5, 64);
